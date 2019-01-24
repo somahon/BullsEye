@@ -51,7 +51,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="1" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="CoX-hd-BD3">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="1" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="CoX-hd-BD3">
                                 <rect key="frame" x="61" y="101" width="420" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
@@ -102,6 +102,7 @@
                     <connections>
                         <outlet property="hitMeButton" destination="AEn-aH-1I7" id="x15-U6-eBu"/>
                         <outlet property="slider" destination="CoX-hd-BD3" id="mrn-vh-jg2"/>
+                        <outlet property="targetLabel" destination="37B-qE-nUa" id="L7M-GE-SI2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
