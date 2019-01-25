@@ -101,6 +101,8 @@
                     </view>
                     <connections>
                         <outlet property="hitMeButton" destination="AEn-aH-1I7" id="x15-U6-eBu"/>
+                        <outlet property="roundLabel" destination="4yG-Rd-Au0" id="vpG-ZN-jlj"/>
+                        <outlet property="scoreLabel" destination="P7F-Ij-Xf3" id="FGw-hM-GY6"/>
                         <outlet property="slider" destination="CoX-hd-BD3" id="mrn-vh-jg2"/>
                         <outlet property="targetLabel" destination="37B-qE-nUa" id="L7M-GE-SI2"/>
                     </connections>

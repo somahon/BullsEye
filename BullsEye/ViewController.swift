@@ -13,9 +13,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var hitMeButton: UIButton!
     @IBOutlet weak var targetLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var roundLabel: UILabel!
     
     var currentValue: Int = 0
     var targetValue = 0
+    var score = 0
+    var currentRound = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,16 +29,16 @@ class ViewController: UIViewController {
     }
 
     @objc func showAlert() {
-        let difference = calculateDifference()
-        let message = "The value of the slider is: \(currentValue)" +
-                        "\nThe target value is \(targetValue)" +
-                            "\nThe difference is: \(difference)"
+        let difference = abs(currentValue - targetValue)
+        let points = 100 - difference
+        let message = "You scored \(points) points"
+        score += points
+        
         let alert = UIAlertController(title: "Hello, World", message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default) {
                 _ in
                 print("pressed the awesome alert button!")
         }
-        
         alert.addAction(action)
         
         present(alert, animated: true, completion: nil)
@@ -50,24 +54,14 @@ class ViewController: UIViewController {
         targetValue = Int.random(in: 1...100)
         currentValue = 50
         slider.value = Float(currentValue)
+        currentRound += 1
         updateLabels()
     }
     
     func updateLabels() {
         targetLabel.text = String(targetValue)
-    }
-    
-    func calculateDifference() -> Int {
-        var difference: Int = 0
-        if currentValue > targetValue {
-            difference = currentValue - targetValue
-        } else if targetValue > currentValue {
-            difference = targetValue - currentValue
-        } else {
-            difference = 0
-        }
-        
-        return difference
+        scoreLabel.text = String(score)
+        roundLabel.text = String(currentRound)
     }
 }
 
