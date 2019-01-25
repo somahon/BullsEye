@@ -48,14 +48,12 @@ class ViewController: UIViewController {
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default) {
-                _ in
-                print("pressed the awesome alert button!")
+            _ in
+            self.startNewRound()
         }
         alert.addAction(action)
         
         present(alert, animated: true, completion: nil)
-        
-        startNewRound()
     }
     
     @IBAction func sliderMoved(_ slider: UISlider) {
@@ -74,6 +72,12 @@ class ViewController: UIViewController {
         targetLabel.text = String(targetValue)
         scoreLabel.text = String(score)
         roundLabel.text = String(currentRound)
+    }
+    
+    @IBAction func startOver() {
+        currentRound = 0
+        score = 0
+        startNewRound()
     }
 }
 
