@@ -26,6 +26,24 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         hitMeButton.addTarget(self, action: #selector(showAlert), for: .touchUpInside)
         startNewRound()
+        
+        let thumbImageNormal = UIImage(named: "SliderThumb-Normal")!
+        slider.setThumbImage(thumbImageNormal, for: .normal)
+        
+        let thumbImageHiglighted = UIImage(named: "SliderThumb-Highlighted")!
+        slider.setThumbImage(thumbImageHiglighted, for: .highlighted)
+        
+        let insets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
+        
+        let trackLeftImage = UIImage(named: "SliderTrackLeft")!
+        let trackLeftResizable = trackLeftImage.resizableImage(withCapInsets: insets)
+        
+        slider.setMinimumTrackImage(trackLeftResizable, for: .normal)
+        
+        let trackRightImage = UIImage(named: "SliderTrackRight")!
+        let trackRightResizable = trackRightImage.resizableImage(withCapInsets: insets)
+        
+        slider.setMaximumTrackImage(trackRightResizable, for: .normal)
     }
 
     @objc func showAlert() {
